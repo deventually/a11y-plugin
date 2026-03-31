@@ -1,19 +1,19 @@
 {
-  "name": "deventually-a11y",
+  "name": "deventually-a11y-wcag22",
   "owner": {
     "name": "deventually"
   },
   "metadata": {
-    "description": "WCAG 2.2 accessibility auditing and fixing tools for Claude Code."
+    "description": "WCAG 2.2 accessibility auditing and fixing tools for Claude Code.",
+    "version": "2.0.0"
   },
   "plugins": [
     {
-      "name": "a11y-wcag22",
+      "name": "deventually-a11y-wcag22",
       "description": "WCAG 2.2 accessibility auditing and fixing for Claude Code. Adds /a11y-audit, /a11y-fix, and /a11y-test commands with parallel execution, incremental caching, and optional browser verification.",
-      "source": {
-        "source": "github",
-        "repo": "deventually/a11y-plugin"
-      }
+      "source": "./",
+      "version": "2.0.0",
+      "strict": true
     }
   ]
 }
