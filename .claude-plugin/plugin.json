@@ -4,17 +4,5 @@
   "version": "2.0.0",
   "author": {
     "name": "deventually"
-  },
-  "skills": [
-    "skills/a11y-audit.md",
-    "skills/a11y-fix.md",
-    "skills/a11y-evaluate.md",
-    "skills/a11y-apply.md",
-    "skills/a11y-browser.md",
-    "skills/a11y-test.md"
-  ],
-  "agents": [
-    "agents/a11y-agent.md",
-    "agents/a11y-test-agent.md"
-  ]
+  }
 }
