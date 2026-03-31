@@ -51,12 +51,12 @@ The **entry point skill** validates arguments and dispatches the **agent**. The 
 
 | Component | File | Role |
 | --- | --- | --- |
-| Audit skill | `skills/a11y-audit.md` | User-facing entry point for `/a11y-audit` — validates args, dispatches agent |
-| Fix skill | `skills/a11y-fix.md` | User-facing entry point for `/a11y-fix` — validates args, dispatches agent |
-| Test skill | `skills/a11y-test.md` | User-facing entry point for `/a11y-test` — validates test infra, dispatches test agent |
-| Evaluate skill | `skills/a11y-evaluate.md` | Internal: per-file rule evaluator (71 checks embedded) |
-| Apply skill | `skills/a11y-apply.md` | Internal: per-file fix applicator |
-| Browser skill | `skills/a11y-browser.md` | Internal: browser-based verification via Playwright MCP |
+| Audit skill | `skills/a11y-audit/SKILL.md` | User-facing entry point for `/a11y-audit` — validates args, dispatches agent |
+| Fix skill | `skills/a11y-fix/SKILL.md` | User-facing entry point for `/a11y-fix` — validates args, dispatches agent |
+| Test skill | `skills/a11y-test/SKILL.md` | User-facing entry point for `/a11y-test` — validates test infra, dispatches test agent |
+| Evaluate skill | `skills/a11y-evaluate/SKILL.md` | Internal: per-file rule evaluator (71 checks embedded) |
+| Apply skill | `skills/a11y-apply/SKILL.md` | Internal: per-file fix applicator |
+| Browser skill | `skills/a11y-browser/SKILL.md` | Internal: browser-based verification via Playwright MCP |
 | Agent | `agents/a11y-agent.md` | Orchestrator: scoping, caching, classification, parallel dispatch, aggregation, reporting |
 | Test agent | `agents/a11y-test-agent.md` | Test runner: golden-file and regression test execution |
 

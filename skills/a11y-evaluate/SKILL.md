@@ -1,6 +1,7 @@
 ---
 name: a11y-evaluate
 description: "Internal: per-file WCAG 2.2 evaluation. Called by a11y-agent, not invoked directly by users."
+user-invocable: false
 ---
 
 # A11y Evaluate (Internal)

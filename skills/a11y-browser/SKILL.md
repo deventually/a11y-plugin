@@ -1,6 +1,7 @@
 ---
 name: a11y-browser
 description: "Internal: browser-based WCAG 2.2 accessibility verification. Called by a11y-agent, not invoked directly by users."
+user-invocable: false
 ---
 
 # A11y Browser Verification

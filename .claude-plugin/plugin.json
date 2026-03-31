@@ -1,5 +1,5 @@
 {
-  "name": "deventually-a11y-wcag22",
+  "name": "a11y-wcag22",
   "description": "WCAG 2.2 accessibility auditing and fixing for Claude Code. Adds /a11y-audit, /a11y-fix, and /a11y-test commands with parallel execution, incremental caching, and optional browser verification.",
   "version": "2.0.0",
   "author": {

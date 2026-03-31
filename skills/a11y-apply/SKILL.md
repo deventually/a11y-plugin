@@ -1,6 +1,7 @@
 ---
 name: a11y-apply
 description: "Internal: per-file accessibility fix applicator. Called by a11y-agent, not invoked directly by users."
+user-invocable: false
 ---
 
 # A11y Apply (Internal)
