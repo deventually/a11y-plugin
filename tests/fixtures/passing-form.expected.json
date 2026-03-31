@@ -1,0 +1,12 @@
+{
+  "file": "examples/passing-form.html",
+  "level": "AA",
+  "expected_summary": {
+    "passes_min": 15,
+    "passes_max": 25,
+    "fails": 0,
+    "manual_review_min": 5,
+    "manual_review_max": 15
+  },
+  "expected_findings": []
+}

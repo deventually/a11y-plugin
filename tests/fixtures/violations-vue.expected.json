@@ -1,0 +1,20 @@
+{
+  "file": "examples/violations-vue.vue",
+  "level": "AA",
+  "expected_summary": {
+    "passes_min": 5,
+    "passes_max": 9,
+    "fails": 7,
+    "manual_review_min": 4,
+    "manual_review_max": 8
+  },
+  "expected_findings": [
+    {"check_id": "page-structure-headings-reflect-the-001", "status": "fail", "severity": "major", "line": 4},
+    {"check_id": "forms-and-validation-every-form-control-001", "status": "fail", "severity": "critical", "line": 7},
+    {"check_id": "forms-and-validation-errors-are-described-001", "status": "fail", "severity": "critical", "line": 15},
+    {"check_id": "keyboard-and-focus-all-functionality-works-001", "status": "fail", "severity": "critical", "line": 19},
+    {"check_id": "links-buttons-and-controls-icon-only-controls-001", "status": "fail", "severity": "critical", "line": 22},
+    {"check_id": "components-and-dynamic-ui-dialogs-have-an-001", "status": "fail", "severity": "critical", "line": 26},
+    {"check_id": "forms-and-validation-input-purpose-is-001", "status": "fail", "severity": "minor", "line": 7}
+  ]
+}

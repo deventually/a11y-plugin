@@ -1,0 +1,20 @@
+{
+  "file": "examples/violations-react.tsx",
+  "level": "AA",
+  "expected_summary": {
+    "passes_min": 4,
+    "passes_max": 8,
+    "fails": 7,
+    "manual_review_min": 4,
+    "manual_review_max": 8
+  },
+  "expected_findings": [
+    {"check_id": "page-structure-headings-reflect-the-001", "status": "fail", "severity": "major", "line": 12},
+    {"check_id": "forms-and-validation-every-form-control-001", "status": "fail", "severity": "critical", "line": 15},
+    {"check_id": "forms-and-validation-errors-are-described-001", "status": "fail", "severity": "critical", "line": 28},
+    {"check_id": "keyboard-and-focus-all-functionality-works-001", "status": "fail", "severity": "critical", "line": 30},
+    {"check_id": "links-buttons-and-controls-icon-only-controls-001", "status": "fail", "severity": "critical", "line": 35},
+    {"check_id": "images-icons-and-tables-informative-images-have-001", "status": "fail", "severity": "critical", "line": 46},
+    {"check_id": "images-icons-and-tables-data-tables-use-001", "status": "fail", "severity": "critical", "line": 48}
+  ]
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser A11y Test Page</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+
+        /* Low contrast text: #999 on #fff = 2.85:1, fails 4.5:1 */
+        .low-contrast { color: #999; }
+
+        /* Small click target: 16x16px, fails 24x24px minimum */
+        .small-target {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 16px;
+            font-size: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Remove focus indicator without replacement */
+        .no-focus-ring:focus { outline: none; }
+
+        /* Fixed-width container that will overflow at 320px */
+        .fixed-width { width: 500px; background: #f0f0f0; padding: 1rem; }
+
+        /* Fixed-height container that will clip at 200% zoom */
+        .fixed-height { height: 40px; overflow: hidden; background: #e0e0e0; padding: 0.5rem; }
+
+        /* Sticky header for focus obscuring test */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        /* Custom modal without proper focus management */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+        }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: #fff; padding: 2rem; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="sticky-header">Sticky Navigation Bar</div>
+
+    <main>
+        <h1>Browser Accessibility Test Page</h1>
+
+        <!-- Low contrast text -->
+        <section>
+            <h2>Contrast Tests</h2>
+            <p class="low-contrast">This text has insufficient contrast (2.85:1 against white).</p>
+            <p style="color: #767676;">This text has sufficient contrast (4.54:1 against white).</p>
+        </section>
+
+        <!-- Small target -->
+        <section>
+            <h2>Target Size Tests</h2>
+            <button class="small-target" aria-label="Close">X</button>
+            <button style="padding: 0.5rem 1rem;">Normal sized button</button>
+        </section>
+
+        <!-- Focus ring removed -->
+        <section>
+            <h2>Focus Visibility Tests</h2>
+            <a href="#" class="no-focus-ring">Link with no focus ring</a>
+            <a href="#">Link with default focus ring</a>
+        </section>
+
+        <!-- Fixed width overflow -->
+        <section>
+            <h2>Reflow Tests</h2>
+            <div class="fixed-width">
+                This container is 500px wide and will cause horizontal scrolling at 320px viewport width.
+            </div>
+        </section>
+
+        <!-- Fixed height clip -->
+        <section>
+            <h2>Text Resize Tests</h2>
+            <div class="fixed-height">
+                This text will be clipped when font size is increased to 200% because the container has a fixed height of 40px with overflow hidden.
+            </div>
+        </section>
+
+        <!-- Focus trap: modal without Escape handler -->
+        <section>
+            <h2>Focus Trap Test</h2>
+            <button id="openModal" onclick="document.getElementById('modal').classList.add('active')">
+                Open Modal (has focus trap - no Escape to close)
+            </button>
+        </section>
+
+        <!-- Interactive div without keyboard -->
+        <section>
+            <h2>Keyboard Access Tests</h2>
+            <div onclick="alert('clicked')" style="cursor: pointer; padding: 0.5rem; background: #ddd;">
+                Click me (div with onclick, no keyboard handler, no tabindex)
+            </div>
+        </section>
+
+        <!-- Form for completeness -->
+        <section>
+            <h2>Form</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" autocomplete="name">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Focus trap modal -->
+    <div id="modal" class="modal-overlay" role="dialog" aria-label="Confirmation">
+        <div class="modal-content">
+            <h2>Confirm Action</h2>
+            <p>This modal does not close with Escape and does not trap focus properly.</p>
+            <button onclick="document.getElementById('modal').classList.remove('active')">Close</button>
+        </div>
+    </div>
+</body>
+</html>

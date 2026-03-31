@@ -1,0 +1,12 @@
+{
+  "file": "examples/passing-react.tsx",
+  "level": "AA",
+  "expected_summary": {
+    "passes_min": 12,
+    "passes_max": 22,
+    "fails": 0,
+    "manual_review_min": 3,
+    "manual_review_max": 12
+  },
+  "expected_findings": []
+}

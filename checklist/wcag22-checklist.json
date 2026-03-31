@@ -1,0 +1,2023 @@
+{
+  "version": "1.0.0",
+  "wcag_version": "2.2",
+  "generated_from": "accessibility_checklist_audit.xlsx",
+  "total_checks": 71,
+  "checks": [
+    {
+      "id": "page-structure-each-page-has-001",
+      "category": "Page structure",
+      "item": "Each page has a unique, descriptive title",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.2"
+      ],
+      "sc_name": "Page Titled",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Check browser title/tab and compare against page purpose.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Document has a non-empty <title> element",
+      "fail_condition": "No <title> element or <title> is empty",
+      "suggested_fix": "Add a descriptive <title> element in the <head>",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html"
+      ]
+    },
+    {
+      "id": "page-structure-the-page-language-001",
+      "category": "Page structure",
+      "item": "The page language is declared correctly",
+      "level": "A",
+      "wcag_sc": [
+        "3.1.1"
+      ],
+      "sc_name": "Language of Page",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Inspect <html lang> and verify it matches the primary page language.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<html> element has a valid lang attribute with a BCP 47 language tag",
+      "fail_condition": "<html> element has no lang attribute or an empty/invalid value",
+      "suggested_fix": "Add lang attribute to <html>, e.g. <html lang=\"en\">",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html"
+      ]
+    },
+    {
+      "id": "page-structure-headings-reflect-the-001",
+      "category": "Page structure",
+      "item": "Headings reflect the content structure in a logical order",
+      "level": "A",
+      "wcag_sc": [
+        "1.3.1",
+        "2.4.6"
+      ],
+      "sc_name": "Info and Relationships; Headings and Labels",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Review headings with styles disabled or via accessibility tree.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Heading levels (h1-h6) do not skip levels and h1 appears first",
+      "fail_condition": "Heading levels skip (e.g., h1 to h3) or no h1 is present",
+      "suggested_fix": "Restructure headings to follow a logical hierarchy without skipping levels",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "page-structure-semantic-html-is-001",
+      "category": "Page structure",
+      "item": "Semantic HTML is used appropriately for headings, lists, buttons, links, tables, and landmarks",
+      "level": "A",
+      "wcag_sc": [
+        "1.3.1",
+        "4.1.2"
+      ],
+      "sc_name": "Info and Relationships; Name, Role, Value",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Inspect markup and verify correct native semantics before ARIA.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Navigation uses <nav>, main content uses <main>, buttons use <button>, links use <a>",
+      "fail_condition": "Non-semantic elements (div/span) used for interactive or structural roles without ARIA",
+      "suggested_fix": "Replace <div> with appropriate semantic elements (<nav>, <main>, <button>, <a>, etc.)",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "page-structure-repeated-content-can-001",
+      "category": "Page structure",
+      "item": "Repeated content can be bypassed, such as with a skip link",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.1"
+      ],
+      "sc_name": "Bypass Blocks",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Tab from page start and verify bypass mechanism works.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "A skip link or bypass mechanism exists near the start of the document",
+      "fail_condition": "No skip link, <main> landmark, or other bypass mechanism found",
+      "suggested_fix": "Add a skip link as the first focusable element: <a href=\"#main\" class=\"skip-link\">Skip to content</a>",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html"
+      ]
+    },
+    {
+      "id": "page-structure-information-and-instructions-001",
+      "category": "Page structure",
+      "item": "Information and instructions are not conveyed by color, shape, location, or sound alone",
+      "level": "A",
+      "wcag_sc": [
+        "1.3.3",
+        "1.4.1"
+      ],
+      "sc_name": "Sensory Characteristics; Use of Color",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Check states/instructions/errors without relying only on visual or auditory cues.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Instructions and information use text labels, not just color/shape/location/sound",
+      "fail_condition": "Directions rely solely on sensory characteristics (e.g., 'click the red button')",
+      "suggested_fix": "Add text labels alongside visual/auditory cues",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "page-structure-repeated-navigation-and-001",
+      "category": "Page structure",
+      "item": "Repeated navigation and repeated UI appear in a consistent order",
+      "level": "AA",
+      "wcag_sc": [
+        "3.2.3"
+      ],
+      "sc_name": "Consistent Navigation",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Compare key pages and confirm repeated elements keep relative order.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Repeated navigation components appear in the same relative order across pages",
+      "fail_condition": "Navigation order varies between pages without clear reason",
+      "suggested_fix": "Ensure shared navigation components maintain consistent ordering across all pages",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "keyboard-and-focus-all-functionality-works-001",
+      "category": "Keyboard and focus",
+      "item": "All functionality works with a keyboard alone",
+      "level": "A",
+      "wcag_sc": [
+        "2.1.1"
+      ],
+      "sc_name": "Keyboard",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Navigate and operate the experience using only keyboard.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "All interactive elements are natively focusable or have tabindex and keyboard event handlers",
+      "fail_condition": "Interactive element uses only mouse events (onclick on div) without keyboard support",
+      "suggested_fix": "Use native interactive elements (<button>, <a>) or add tabindex='0' and keydown/keypress handlers",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "keyboard-and-focus-there-are-no-001",
+      "category": "Keyboard and focus",
+      "item": "There are no keyboard traps",
+      "level": "A",
+      "wcag_sc": [
+        "2.1.2"
+      ],
+      "sc_name": "No Keyboard Trap",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Ensure focus can always move away using standard keys.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "No element prevents focus from moving away via Tab or Escape",
+      "fail_condition": "Focus is trapped in an element with no documented escape mechanism",
+      "suggested_fix": "Ensure all focus-trapping components (modals) provide keyboard escape, and non-modal components don't trap focus",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "keyboard-and-focus-focus-order-is-001",
+      "category": "Keyboard and focus",
+      "item": "Focus order is logical",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.3"
+      ],
+      "sc_name": "Focus Order",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Tab through page and verify order matches reading and task flow.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "No positive tabindex values; DOM order matches visual reading order",
+      "fail_condition": "Positive tabindex values force non-logical focus order, or DOM order mismatches visual layout",
+      "suggested_fix": "Remove positive tabindex values and reorder DOM to match visual layout",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "keyboard-and-focus-focus-moves-appropriately-001",
+      "category": "Keyboard and focus",
+      "item": "Focus moves appropriately when opening or closing dynamic UI",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.3",
+        "3.2.1"
+      ],
+      "sc_name": "Focus Order; On Focus",
+      "applies_to": [
+        "dynamic ui"
+      ],
+      "manual_check": "Open/close menus, dialogs, disclosures and verify focus lands logically.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "Dynamic UI (dialogs, menus) moves focus on open and restores on close",
+      "fail_condition": "Focus does not move when dynamic content appears or is not restored when it closes",
+      "suggested_fix": "Add focus management: move focus to new content on open, return to trigger on close",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "keyboard-and-focus-focus-is-clearly-001",
+      "category": "Keyboard and focus",
+      "item": "Focus is clearly visible",
+      "level": "AA",
+      "wcag_sc": [
+        "2.4.7"
+      ],
+      "sc_name": "Focus Visible",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Verify visible focus indicator on all focusable elements.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "No CSS rules that remove focus indicators (outline: none/0) without replacement",
+      "fail_condition": "CSS removes focus outline without providing an alternative visible indicator",
+      "suggested_fix": "Remove 'outline: none' or 'outline: 0' rules, or replace with a visible custom focus style",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "keyboard-and-focus-focused-elements-are-001",
+      "category": "Keyboard and focus",
+      "item": "Focused elements are not hidden behind sticky or overlaying UI",
+      "level": "AA",
+      "wcag_sc": [
+        "2.4.11"
+      ],
+      "sc_name": "Focus Not Obscured (Minimum)",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Scroll and tab through page; ensure focus remains visible.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "No fixed/sticky positioned elements that could obscure focused content without scroll-padding or equivalent",
+      "fail_condition": "Fixed/sticky elements exist without scroll-margin/scroll-padding to prevent focus obscurance",
+      "suggested_fix": "Add scroll-padding-top to account for sticky header height, or use scroll-margin on focusable elements",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "links-buttons-and-controls-links-are-used-001",
+      "category": "Links, buttons, and controls",
+      "item": "Links are used for navigation and buttons are used for actions",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.2"
+      ],
+      "sc_name": "Name, Role, Value",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Inspect semantics and activation behavior.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<a> elements have href and navigate; <button> elements trigger actions; no role misuse",
+      "fail_condition": "<a> without href used as button, <button> used for navigation, or div/span used for either without proper role",
+      "suggested_fix": "Use <a href> for navigation and <button> for actions. Replace div/span click handlers with proper elements",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "links-buttons-and-controls-link-purpose-is-001",
+      "category": "Links, buttons, and controls",
+      "item": "Link purpose is clear from the text or its context",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.4"
+      ],
+      "sc_name": "Link Purpose (In Context)",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Read links in place and confirm purpose is understandable.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Links have descriptive text content, aria-label, or aria-labelledby; no bare 'click here' or 'read more'",
+      "fail_condition": "Link text is generic ('click here', 'read more', 'here') without aria-label providing context",
+      "suggested_fix": "Replace generic link text with descriptive text, or add aria-label describing the destination",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "links-buttons-and-controls-icon-only-controls-001",
+      "category": "Links, buttons, and controls",
+      "item": "Icon-only controls have an accessible name",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.2",
+        "2.5.3"
+      ],
+      "sc_name": "Name, Role, Value; Label in Name",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Check accessible name in accessibility tree or screen reader.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Every button/link containing only an icon has aria-label, aria-labelledby, or visually-hidden text",
+      "fail_condition": "Button or link contains only an icon (<svg>, <i>, <img>) with no accessible name",
+      "suggested_fix": "Add aria-label to the button/link, or add a visually-hidden <span> with descriptive text",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "links-buttons-and-controls-custom-controls-expose-001",
+      "category": "Links, buttons, and controls",
+      "item": "Custom controls expose the correct name, role, state, and value",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.2"
+      ],
+      "sc_name": "Name, Role, Value",
+      "applies_to": [
+        "custom components"
+      ],
+      "manual_check": "Inspect accessibility tree and test state changes.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Custom interactive elements have appropriate role, aria-label/aria-labelledby, and state attributes",
+      "fail_condition": "Custom component (div/span) acts as a control without role, accessible name, or state attributes",
+      "suggested_fix": "Add appropriate ARIA role, accessible name (aria-label), and state attributes (aria-expanded, etc.)",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "links-buttons-and-controls-controls-do-not-001",
+      "category": "Links, buttons, and controls",
+      "item": "Controls do not trigger unexpected context changes on focus or input",
+      "level": "A",
+      "wcag_sc": [
+        "3.2.1",
+        "3.2.2"
+      ],
+      "sc_name": "On Focus; On Input",
+      "applies_to": [
+        "interactive ui"
+      ],
+      "manual_check": "Focus and edit controls; confirm no surprise navigation or major UI changes.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "No onfocus/onchange handlers that navigate or significantly alter the page without user activation",
+      "fail_condition": "Form control or link triggers navigation or major UI change on focus or input without explicit submit",
+      "suggested_fix": "Move context-changing behavior to explicit user actions (button click, form submit)",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "links-buttons-and-controls-pointer-targets-are-001",
+      "category": "Links, buttons, and controls",
+      "item": "Pointer targets are large enough except where exempted",
+      "level": "AA",
+      "wcag_sc": [
+        "2.5.8"
+      ],
+      "sc_name": "Target Size (Minimum)",
+      "applies_to": [
+        "touch",
+        "pointer ui"
+      ],
+      "manual_check": "Measure or inspect hit area against target size guidance.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "Interactive elements have explicit minimum dimensions of 24x24 CSS pixels or are inline/sentence text",
+      "fail_condition": "Interactive element has explicit dimensions below 24x24 CSS pixels",
+      "suggested_fix": "Increase target size to at least 24x24 CSS pixels using min-width/min-height or padding",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-color-is-not-001",
+      "category": "Text and visual presentation",
+      "item": "Color is not the only way information, errors, or required fields are communicated",
+      "level": "A",
+      "wcag_sc": [
+        "1.4.1"
+      ],
+      "sc_name": "Use of Color",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Check for labels/icons/text equivalents beyond color.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Error states, required fields, and status indicators use text/icons in addition to color",
+      "fail_condition": "Information conveyed by color alone with no text, icon, or pattern alternative",
+      "suggested_fix": "Add text labels, icons, or patterns alongside color-based indicators",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-normal-text-contrast-001",
+      "category": "Text and visual presentation",
+      "item": "Normal text contrast is at least 4.5:1",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.3"
+      ],
+      "sc_name": "Contrast (Minimum)",
+      "applies_to": [
+        "all visual text"
+      ],
+      "manual_check": "Test representative text/background pairs.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "Hardcoded text colors meet 4.5:1 contrast ratio against their background",
+      "fail_condition": "Hardcoded color pair has contrast ratio below 4.5:1 for normal text",
+      "suggested_fix": "Adjust text or background color to meet 4.5:1 minimum contrast ratio",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-large-text-contrast-001",
+      "category": "Text and visual presentation",
+      "item": "Large text contrast is at least 3:1",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.3"
+      ],
+      "sc_name": "Contrast (Minimum)",
+      "applies_to": [
+        "all visual text"
+      ],
+      "manual_check": "Test large text/background pairs.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "Large text (18pt+ or 14pt+ bold) color pairs meet 3:1 contrast ratio",
+      "fail_condition": "Large text color pair has contrast ratio below 3:1",
+      "suggested_fix": "Adjust text or background color to meet 3:1 minimum contrast ratio for large text",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-text-can-be-001",
+      "category": "Text and visual presentation",
+      "item": "Text can be resized to 200% without loss of content or function",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.4"
+      ],
+      "sc_name": "Resize Text",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Zoom text/viewport and verify usability.",
+      "automatable": "no",
+      "inputs_required": [
+        "dom",
+        "screenshot"
+      ],
+      "pass_condition": "Content remains usable and no information is lost at 200% text zoom",
+      "fail_condition": "Content is clipped, overlaps, or becomes unusable at 200% zoom",
+      "suggested_fix": "Use relative units (rem, em, %) instead of fixed px for text and container sizes",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-content-reflows-without-001",
+      "category": "Text and visual presentation",
+      "item": "Content reflows without two-dimensional scrolling, except where essential",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.10"
+      ],
+      "sc_name": "Reflow",
+      "applies_to": [
+        "responsive layouts"
+      ],
+      "manual_check": "Test at narrow viewport / 400% zoom where applicable.",
+      "automatable": "no",
+      "inputs_required": [
+        "dom",
+        "screenshot"
+      ],
+      "pass_condition": "Content reflows to single column at 320px width without horizontal scrolling",
+      "fail_condition": "Horizontal scrollbar appears at 320px viewport width for non-exempt content",
+      "suggested_fix": "Use responsive design with flexible layouts, avoid fixed widths exceeding 320px",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-images-of-text-001",
+      "category": "Text and visual presentation",
+      "item": "Images of text are avoided unless essential",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.5"
+      ],
+      "sc_name": "Images of Text",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Check UI assets and marketing content for text baked into images.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "No <img> elements containing text that could be rendered as actual HTML text",
+      "fail_condition": "Images are used for text content that could be implemented as styled HTML text",
+      "suggested_fix": "Replace images of text with styled HTML text using CSS for visual presentation",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-text-spacing-changes-001",
+      "category": "Text and visual presentation",
+      "item": "Text spacing changes do not break content or functionality",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.12"
+      ],
+      "sc_name": "Text Spacing",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Apply increased line/paragraph/letter/word spacing and verify layout.",
+      "automatable": "no",
+      "inputs_required": [
+        "dom",
+        "screenshot"
+      ],
+      "pass_condition": "Content remains readable with increased line-height, letter-spacing, word-spacing, and paragraph spacing",
+      "fail_condition": "Content is clipped or overlaps when text spacing is increased per WCAG 1.4.12 values",
+      "suggested_fix": "Avoid fixed container heights; use flexible layouts that accommodate text spacing changes",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-normal-text-contrast-002",
+      "category": "Text and visual presentation",
+      "item": "Normal text contrast is at least 7:1",
+      "level": "AAA",
+      "wcag_sc": [
+        "1.4.6"
+      ],
+      "sc_name": "Contrast (Enhanced)",
+      "applies_to": [
+        "all visual text"
+      ],
+      "manual_check": "Test representative text/background pairs for AAA.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "Hardcoded text colors meet 7:1 contrast ratio against their background",
+      "fail_condition": "Hardcoded color pair has contrast ratio below 7:1 for normal text",
+      "suggested_fix": "Adjust text or background color to meet 7:1 enhanced contrast ratio",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "text-and-visual-presentation-large-text-contrast-002",
+      "category": "Text and visual presentation",
+      "item": "Large text contrast is at least 4.5:1",
+      "level": "AAA",
+      "wcag_sc": [
+        "1.4.6"
+      ],
+      "sc_name": "Contrast (Enhanced)",
+      "applies_to": [
+        "all visual text"
+      ],
+      "manual_check": "Test large text/background pairs for AAA.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "Large text color pairs meet 4.5:1 contrast ratio (AAA enhanced)",
+      "fail_condition": "Large text color pair has contrast ratio below 4.5:1 (AAA)",
+      "suggested_fix": "Adjust text or background color to meet 4.5:1 enhanced contrast ratio for large text",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "images-icons-and-tables-informative-images-have-001",
+      "category": "Images, icons, and tables",
+      "item": "Informative images have appropriate alt text",
+      "level": "A",
+      "wcag_sc": [
+        "1.1.1"
+      ],
+      "sc_name": "Non-text Content",
+      "applies_to": [
+        "images"
+      ],
+      "manual_check": "Review alt text for meaning, not literal appearance.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "All <img> elements have an alt attribute; informative images have non-empty alt text",
+      "fail_condition": "<img> element is missing the alt attribute entirely",
+      "suggested_fix": "Add alt attribute: alt=\"description\" for informative images, alt=\"\" for decorative",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "images-icons-and-tables-decorative-images-are-001",
+      "category": "Images, icons, and tables",
+      "item": "Decorative images are hidden from assistive technology",
+      "level": "A",
+      "wcag_sc": [
+        "1.1.1"
+      ],
+      "sc_name": "Non-text Content",
+      "applies_to": [
+        "images"
+      ],
+      "manual_check": "Verify decorative assets have null alt or are otherwise ignored.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Decorative images have alt=\"\", role=\"presentation\", or aria-hidden=\"true\"",
+      "fail_condition": "Decorative image has non-empty alt text or no alt attribute",
+      "suggested_fix": "Add alt=\"\" to decorative images, or use role=\"presentation\" / aria-hidden=\"true\"",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "images-icons-and-tables-functional-images-describe-001",
+      "category": "Images, icons, and tables",
+      "item": "Functional images describe the action or destination",
+      "level": "A",
+      "wcag_sc": [
+        "1.1.1"
+      ],
+      "sc_name": "Non-text Content",
+      "applies_to": [
+        "images",
+        "controls"
+      ],
+      "manual_check": "Check alt or accessible name matches function.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Images inside links/buttons have alt text describing the action or destination, not the image appearance",
+      "fail_condition": "Functional image (inside <a> or <button>) has no alt text or alt describes appearance instead of function",
+      "suggested_fix": "Set alt text to describe the action (e.g., 'Search', 'Go to homepage') not the image appearance",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "images-icons-and-tables-complex-graphics-have-001",
+      "category": "Images, icons, and tables",
+      "item": "Complex graphics have an equivalent text explanation",
+      "level": "A",
+      "wcag_sc": [
+        "1.1.1"
+      ],
+      "sc_name": "Non-text Content",
+      "applies_to": [
+        "charts",
+        "diagrams"
+      ],
+      "manual_check": "Verify nearby explanation or linked long description.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Complex images (charts, diagrams) have extended description via aria-describedby, longdesc, or adjacent text",
+      "fail_condition": "Complex graphic has only a brief alt with no extended explanation available",
+      "suggested_fix": "Add a detailed text description near the graphic or link to a long description",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "images-icons-and-tables-data-tables-use-001",
+      "category": "Images, icons, and tables",
+      "item": "Data tables use proper table markup and header associations",
+      "level": "A",
+      "wcag_sc": [
+        "1.3.1"
+      ],
+      "sc_name": "Info and Relationships",
+      "applies_to": [
+        "tables"
+      ],
+      "manual_check": "Inspect th/header associations and screen reader navigation.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<table> elements use <th> for headers, with scope or headers attributes for complex tables",
+      "fail_condition": "<table> has no <th> elements, or complex table lacks scope/headers attributes",
+      "suggested_fix": "Add <th> elements for column/row headers with scope=\"col\" or scope=\"row\"",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "images-icons-and-tables-non-text-ui-001",
+      "category": "Images, icons, and tables",
+      "item": "Non-text UI elements and meaningful graphics have sufficient contrast",
+      "level": "AA",
+      "wcag_sc": [
+        "1.4.11"
+      ],
+      "sc_name": "Non-text Contrast",
+      "applies_to": [
+        "controls",
+        "graphics"
+      ],
+      "manual_check": "Test component boundaries, icons, indicators, charts as applicable.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "dom"
+      ],
+      "pass_condition": "Non-text UI elements (icons, borders, focus indicators) have 3:1 contrast against adjacent colors",
+      "fail_condition": "Non-text UI element has contrast ratio below 3:1 against adjacent color",
+      "suggested_fix": "Increase contrast of UI element boundaries, icons, or indicators to at least 3:1",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-every-form-control-001",
+      "category": "Forms and validation",
+      "item": "Every form control has a programmatically associated label",
+      "level": "A",
+      "wcag_sc": [
+        "1.3.1",
+        "3.3.2"
+      ],
+      "sc_name": "Info and Relationships; Labels or Instructions",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Inspect labels/accessibility tree and test with screen reader.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Every <input>, <select>, <textarea> has an associated <label> (for/id), aria-label, or aria-labelledby",
+      "fail_condition": "Form control exists without any label association (<label>, aria-label, or aria-labelledby)",
+      "suggested_fix": "Add <label for=\"fieldId\"> matching the control's id, or add aria-label attribute",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-required-fields-are-001",
+      "category": "Forms and validation",
+      "item": "Required fields are identified clearly",
+      "level": "A",
+      "wcag_sc": [
+        "3.3.2",
+        "1.3.3"
+      ],
+      "sc_name": "Labels or Instructions; Sensory Characteristics",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Check visible and programmatic indication of required status.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Required fields have required attribute, aria-required=\"true\", or visible required indicator with text",
+      "fail_condition": "Required field has no programmatic or visible required indication",
+      "suggested_fix": "Add required attribute or aria-required=\"true\", plus visible text indicator",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-placeholder-text-is-001",
+      "category": "Forms and validation",
+      "item": "Placeholder text is not the only label",
+      "level": "A",
+      "wcag_sc": [
+        "3.3.2"
+      ],
+      "sc_name": "Labels or Instructions",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Confirm each field still has a label when placeholder disappears.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Form controls with placeholder also have a visible <label>, aria-label, or aria-labelledby",
+      "fail_condition": "Form control uses placeholder as the only label with no <label>, aria-label, or aria-labelledby",
+      "suggested_fix": "Add a visible <label> element in addition to the placeholder attribute",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-instructions-are-provided-001",
+      "category": "Forms and validation",
+      "item": "Instructions are provided before users need them",
+      "level": "A",
+      "wcag_sc": [
+        "3.3.2"
+      ],
+      "sc_name": "Labels or Instructions",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Review task flow and verify instructions are available in time.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Form instructions appear before the controls they describe in DOM order",
+      "fail_condition": "Instructions for form completion appear after the relevant controls or are absent",
+      "suggested_fix": "Place instructions before the form or at the top of the form group",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-errors-are-described-001",
+      "category": "Forms and validation",
+      "item": "Errors are described in text and not by color alone",
+      "level": "A",
+      "wcag_sc": [
+        "3.3.1",
+        "1.4.1"
+      ],
+      "sc_name": "Error Identification; Use of Color",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Trigger errors and inspect message content and styling.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Error states include text messages, not just color changes (red borders, etc.)",
+      "fail_condition": "Error indication uses only color (e.g., red border) without text message",
+      "suggested_fix": "Add visible error text message alongside any color-based error indication",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-users-can-identify-001",
+      "category": "Forms and validation",
+      "item": "Users can identify which field has an error",
+      "level": "A",
+      "wcag_sc": [
+        "3.3.1"
+      ],
+      "sc_name": "Error Identification",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Trigger validation and confirm field association is clear.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Error messages reference or are visually adjacent to the specific field with the error",
+      "fail_condition": "Error message is generic or displayed far from the erroneous field",
+      "suggested_fix": "Display error messages adjacent to or within the field group, identifying the specific field",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-error-messages-are-001",
+      "category": "Forms and validation",
+      "item": "Error messages are associated with the relevant field where possible",
+      "level": "AA",
+      "wcag_sc": [
+        "3.3.1",
+        "4.1.3"
+      ],
+      "sc_name": "Error Identification; Status Messages",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Inspect aria-describedby / inline linkage and announcements.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Error message elements are linked to their field via aria-describedby or aria-errormessage",
+      "fail_condition": "Error message exists near a field but has no programmatic association (aria-describedby/aria-errormessage)",
+      "suggested_fix": "Add aria-describedby on the input pointing to the error message element's id",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-input-purpose-is-001",
+      "category": "Forms and validation",
+      "item": "Input purpose is identified programmatically for common personal-data fields where applicable",
+      "level": "AA",
+      "wcag_sc": [
+        "1.3.5"
+      ],
+      "sc_name": "Identify Input Purpose",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Check autocomplete tokens on relevant inputs.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Personal data inputs (name, email, phone, address, etc.) have appropriate autocomplete attribute",
+      "fail_condition": "Personal data input field is missing autocomplete attribute",
+      "suggested_fix": "Add autocomplete attribute (e.g., autocomplete=\"email\", autocomplete=\"given-name\")",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-authentication-does-not-001",
+      "category": "Forms and validation",
+      "item": "Authentication does not rely only on a cognitive-function test unless an accessible alternative exists",
+      "level": "AA",
+      "wcag_sc": [
+        "3.3.8"
+      ],
+      "sc_name": "Accessible Authentication (Minimum)",
+      "applies_to": [
+        "authentication"
+      ],
+      "manual_check": "Review login/verification tasks and alternatives.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Authentication provides alternatives to cognitive tests (password managers, passkeys, copy-paste)",
+      "fail_condition": "Authentication requires memorization or transcription with no accessible alternative",
+      "suggested_fix": "Support password managers (no paste blocking), provide passkey/SSO options",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-important-submissions-support-001",
+      "category": "Forms and validation",
+      "item": "Important submissions support review, correction, confirmation, or reversal",
+      "level": "AAA",
+      "wcag_sc": [
+        "3.3.4"
+      ],
+      "sc_name": "Error Prevention (Legal, Financial, Data)",
+      "applies_to": [
+        "critical forms"
+      ],
+      "manual_check": "Test legal/financial/important transactions.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Legal/financial submissions allow review, confirmation, and correction before finalizing",
+      "fail_condition": "Important submission is processed immediately without review/confirm step",
+      "suggested_fix": "Add a review/confirm step before final submission of important data",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "forms-and-validation-error-suggestions-are-001",
+      "category": "Forms and validation",
+      "item": "Error suggestions are provided where possible",
+      "level": "AAA",
+      "wcag_sc": [
+        "3.3.3"
+      ],
+      "sc_name": "Error Suggestion",
+      "applies_to": [
+        "forms"
+      ],
+      "manual_check": "Trigger common validation failures and check helpful suggestions.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Validation errors include suggestions for correction when the system can determine them",
+      "fail_condition": "Error message states the problem but provides no guidance on how to fix it",
+      "suggested_fix": "Include correction suggestions in error messages (e.g., 'Please enter a valid email like user@example.com')",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-menus-tabs-accordions-001",
+      "category": "Components and dynamic UI",
+      "item": "Menus, tabs, accordions, disclosures, and similar components work with the keyboard",
+      "level": "A",
+      "wcag_sc": [
+        "2.1.1"
+      ],
+      "sc_name": "Keyboard",
+      "applies_to": [
+        "components"
+      ],
+      "manual_check": "Test standard keyboard interactions for each widget.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "Composite widgets have keyboard event handlers for arrow keys, Enter, Space, Escape as appropriate",
+      "fail_condition": "Interactive widget has no keyboard event handlers beyond default tab behavior",
+      "suggested_fix": "Add keyboard event handlers following WAI-ARIA Authoring Practices for the widget pattern",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-expanded-collapsed-selected-001",
+      "category": "Components and dynamic UI",
+      "item": "Expanded, collapsed, selected, active, and disabled states are exposed programmatically",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.2"
+      ],
+      "sc_name": "Name, Role, Value",
+      "applies_to": [
+        "components"
+      ],
+      "manual_check": "Inspect accessibility tree and state announcements.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "State attributes (aria-expanded, aria-selected, aria-disabled, aria-pressed) are present on stateful components",
+      "fail_condition": "Stateful component (accordion, tab, toggle) missing aria-expanded, aria-selected, or similar state attribute",
+      "suggested_fix": "Add appropriate ARIA state attributes (aria-expanded, aria-selected, aria-disabled) to the control",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-dialogs-have-an-001",
+      "category": "Components and dynamic UI",
+      "item": "Dialogs have an accessible name",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.2"
+      ],
+      "sc_name": "Name, Role, Value",
+      "applies_to": [
+        "dialogs",
+        "modals"
+      ],
+      "manual_check": "Open dialog and verify accessible name.",
+      "automatable": "yes",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Dialog elements have aria-label or aria-labelledby pointing to a visible heading",
+      "fail_condition": "<dialog> or role=\"dialog\" element has no aria-label or aria-labelledby",
+      "suggested_fix": "Add aria-labelledby pointing to the dialog's heading element, or add aria-label",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-focus-moves-into-001",
+      "category": "Components and dynamic UI",
+      "item": "Focus moves into dialogs when they open",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.3"
+      ],
+      "sc_name": "Focus Order",
+      "applies_to": [
+        "dialogs",
+        "modals"
+      ],
+      "manual_check": "Open dialog and verify initial focus.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "Dialog open logic includes focus management (element.focus() or autofocus attribute)",
+      "fail_condition": "Dialog opens without any focus management code",
+      "suggested_fix": "Call .focus() on the dialog or its first focusable element when opening, or use autofocus attribute",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-focus-is-contained-001",
+      "category": "Components and dynamic UI",
+      "item": "Focus is contained within modal dialogs while open",
+      "level": "A",
+      "wcag_sc": [
+        "2.1.2",
+        "2.4.3"
+      ],
+      "sc_name": "No Keyboard Trap; Focus Order",
+      "applies_to": [
+        "dialogs",
+        "modals"
+      ],
+      "manual_check": "Tab / Shift+Tab inside modal and verify containment.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "Modal dialog implements focus trapping (Tab cycles within dialog) or uses native <dialog> with showModal()",
+      "fail_condition": "Modal dialog allows Tab to move focus outside the dialog while it is open",
+      "suggested_fix": "Use native <dialog>.showModal() which traps focus, or implement a focus trap with keydown listener",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-focus-returns-to-001",
+      "category": "Components and dynamic UI",
+      "item": "Focus returns to a logical place when dialogs close",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.3"
+      ],
+      "sc_name": "Focus Order",
+      "applies_to": [
+        "dialogs",
+        "modals"
+      ],
+      "manual_check": "Close dialog and verify focus restoration.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html",
+        "keyboard"
+      ],
+      "pass_condition": "Dialog close logic restores focus to the triggering element",
+      "fail_condition": "Dialog closes without restoring focus to the trigger or another logical element",
+      "suggested_fix": "Store a reference to the trigger element before opening, and call trigger.focus() on close",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-background-content-is-001",
+      "category": "Components and dynamic UI",
+      "item": "Background content is not interactable while a modal is open",
+      "level": "A",
+      "wcag_sc": [
+        "2.4.3",
+        "4.1.2"
+      ],
+      "sc_name": "Focus Order; Name, Role, Value",
+      "applies_to": [
+        "dialogs",
+        "modals"
+      ],
+      "manual_check": "Try interacting outside modal with keyboard and pointer.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Modal uses <dialog>.showModal(), inert attribute on background, or aria-hidden on background content",
+      "fail_condition": "Modal is open but background content remains interactive (no inert, no aria-hidden on background)",
+      "suggested_fix": "Use <dialog>.showModal() or add inert attribute to background content while modal is open",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-important-dynamic-updates-001",
+      "category": "Components and dynamic UI",
+      "item": "Important dynamic updates are announced accessibly",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.3"
+      ],
+      "sc_name": "Status Messages",
+      "applies_to": [
+        "dynamic ui"
+      ],
+      "manual_check": "Trigger async updates and listen with screen reader.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Dynamic content containers have aria-live, role=\"alert\", role=\"status\", or role=\"log\"",
+      "fail_condition": "Dynamic content updates without any live region markup",
+      "suggested_fix": "Add aria-live=\"polite\" (or role=\"status\") to the container that receives dynamic updates",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-status-success-warning-001",
+      "category": "Components and dynamic UI",
+      "item": "Status, success, warning, and error messages are exposed without requiring focus",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.3"
+      ],
+      "sc_name": "Status Messages",
+      "applies_to": [
+        "dynamic ui"
+      ],
+      "manual_check": "Trigger toast/status messages and verify announcement.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Status message containers use role=\"status\", role=\"alert\", or aria-live with appropriate politeness",
+      "fail_condition": "Status/toast message appears in DOM without live region attributes",
+      "suggested_fix": "Wrap status messages in an element with role=\"status\" (polite) or role=\"alert\" (assertive)",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "components-and-dynamic-ui-dynamic-updates-do-001",
+      "category": "Components and dynamic UI",
+      "item": "Dynamic updates do not steal focus unless necessary",
+      "level": "AA",
+      "wcag_sc": [
+        "3.2.1"
+      ],
+      "sc_name": "On Focus",
+      "applies_to": [
+        "dynamic ui"
+      ],
+      "manual_check": "Trigger updates and confirm focus remains stable when appropriate.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Dynamic content updates use aria-live instead of programmatic focus movement",
+      "fail_condition": "Non-critical dynamic update moves focus away from user's current position",
+      "suggested_fix": "Use aria-live regions for non-critical updates instead of moving focus",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-prerecorded-audio-has-001",
+      "category": "Media, motion, and timing",
+      "item": "Prerecorded audio has a transcript or equivalent",
+      "level": "A",
+      "wcag_sc": [
+        "1.2.1"
+      ],
+      "sc_name": "Audio-only and Video-only (Prerecorded)",
+      "applies_to": [
+        "media"
+      ],
+      "manual_check": "Verify transcript/equivalent is available.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<audio> elements have an adjacent or linked transcript",
+      "fail_condition": "<audio> element exists with no associated transcript link or adjacent text",
+      "suggested_fix": "Provide a transcript link near the audio player or include transcript text on the page",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-prerecorded-video-with-001",
+      "category": "Media, motion, and timing",
+      "item": "Prerecorded video with audio has captions",
+      "level": "A",
+      "wcag_sc": [
+        "1.2.2"
+      ],
+      "sc_name": "Captions (Prerecorded)",
+      "applies_to": [
+        "media"
+      ],
+      "manual_check": "Play representative videos and inspect captions.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<video> elements have a <track kind=\"captions\"> element",
+      "fail_condition": "<video> element has no <track kind=\"captions\"> child",
+      "suggested_fix": "Add <track kind=\"captions\" src=\"captions.vtt\" srclang=\"en\" label=\"English\"> to the video element",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-video-only-content-001",
+      "category": "Media, motion, and timing",
+      "item": "Video-only content has an equivalent text or audio alternative",
+      "level": "A",
+      "wcag_sc": [
+        "1.2.1"
+      ],
+      "sc_name": "Audio-only and Video-only (Prerecorded)",
+      "applies_to": [
+        "media"
+      ],
+      "manual_check": "Verify alternative explains the visual information.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Video-only elements have an adjacent or linked text alternative",
+      "fail_condition": "Video-only content has no text or audio alternative",
+      "suggested_fix": "Provide a text description or audio alternative for video-only content",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-auto-playing-audio-001",
+      "category": "Media, motion, and timing",
+      "item": "Auto-playing audio longer than 3 seconds can be paused, stopped, or independently controlled",
+      "level": "A",
+      "wcag_sc": [
+        "1.4.2"
+      ],
+      "sc_name": "Audio Control",
+      "applies_to": [
+        "media"
+      ],
+      "manual_check": "Check playback controls and autoplay behavior.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<audio>/<video> with autoplay has controls attribute or a visible pause/stop mechanism",
+      "fail_condition": "Media element has autoplay without controls attribute or visible pause mechanism",
+      "suggested_fix": "Add controls attribute to the media element, or provide a visible pause/stop button",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-moving-or-auto-001",
+      "category": "Media, motion, and timing",
+      "item": "Moving or auto-updating content can be paused, stopped, or hidden when required",
+      "level": "A",
+      "wcag_sc": [
+        "2.2.2"
+      ],
+      "sc_name": "Pause, Stop, Hide",
+      "applies_to": [
+        "motion",
+        "carousels"
+      ],
+      "manual_check": "Inspect carousels, tickers, and animations.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Animated/auto-updating elements have a visible pause, stop, or hide mechanism",
+      "fail_condition": "Auto-moving/updating content (carousel, ticker) has no pause/stop control",
+      "suggested_fix": "Add a pause/stop button for carousels, tickers, and auto-updating content",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-content-does-not-001",
+      "category": "Media, motion, and timing",
+      "item": "Content does not flash above the allowed threshold",
+      "level": "A",
+      "wcag_sc": [
+        "2.3.1"
+      ],
+      "sc_name": "Three Flashes or Below Threshold",
+      "applies_to": [
+        "motion",
+        "animation"
+      ],
+      "manual_check": "Review flashing content; test if needed.",
+      "automatable": "no",
+      "inputs_required": [
+        "screenshot",
+        "media"
+      ],
+      "pass_condition": "No content flashes more than 3 times per second",
+      "fail_condition": "Content flashes more than 3 times per second or exceeds general flash thresholds",
+      "suggested_fix": "Reduce flash frequency below 3 per second, or reduce the flashing area",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-time-limits-can-001",
+      "category": "Media, motion, and timing",
+      "item": "Time limits can be turned off, adjusted, or extended unless essential",
+      "level": "A",
+      "wcag_sc": [
+        "2.2.1"
+      ],
+      "sc_name": "Timing Adjustable",
+      "applies_to": [
+        "timed tasks"
+      ],
+      "manual_check": "Review session/task timeouts and warnings.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Any time limit provides turn off, adjust, or extend mechanism before expiry",
+      "fail_condition": "Session or task timeout occurs without warning or extension option",
+      "suggested_fix": "Add a timeout warning with option to extend, or allow users to disable time limits",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-dragging-interactions-have-001",
+      "category": "Media, motion, and timing",
+      "item": "Dragging interactions have a simple pointer alternative unless essential",
+      "level": "A",
+      "wcag_sc": [
+        "2.5.7"
+      ],
+      "sc_name": "Dragging Movements",
+      "applies_to": [
+        "pointer interactions"
+      ],
+      "manual_check": "Test non-drag alternative.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Elements with drag handlers also have click/tap alternative or button-based controls",
+      "fail_condition": "Element uses drag events (dragstart, ondrag) without a simple pointer alternative",
+      "suggested_fix": "Add button-based or click alternative for drag interactions (e.g., move up/down buttons)",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-pointer-actions-can-001",
+      "category": "Media, motion, and timing",
+      "item": "Pointer actions can be canceled where applicable",
+      "level": "A",
+      "wcag_sc": [
+        "2.5.2"
+      ],
+      "sc_name": "Pointer Cancellation",
+      "applies_to": [
+        "pointer interactions"
+      ],
+      "manual_check": "Press, move away, release; verify cancel behavior.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Actions fire on mouseup/pointerup/click (not mousedown/pointerdown) allowing cancel by moving away",
+      "fail_condition": "Actions fire on mousedown/pointerdown without cancel mechanism",
+      "suggested_fix": "Move action handlers from mousedown/pointerdown to click/mouseup/pointerup events",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-prerecorded-video-includes-001",
+      "category": "Media, motion, and timing",
+      "item": "Prerecorded video includes audio description or equivalent where needed",
+      "level": "AA",
+      "wcag_sc": [
+        "1.2.5"
+      ],
+      "sc_name": "Audio Description (Prerecorded)",
+      "applies_to": [
+        "media"
+      ],
+      "manual_check": "Review videos where visuals carry key meaning.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "<video> has <track kind=\"descriptions\"> or a linked audio description alternative",
+      "fail_condition": "Video with meaningful visual content has no audio description track or alternative",
+      "suggested_fix": "Add <track kind=\"descriptions\"> or provide a separate audio-described version",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-live-media-has-001",
+      "category": "Media, motion, and timing",
+      "item": "Live media has captions where required",
+      "level": "AA",
+      "wcag_sc": [
+        "1.2.4"
+      ],
+      "sc_name": "Captions (Live)",
+      "applies_to": [
+        "live media"
+      ],
+      "manual_check": "Verify live captions on applicable streams/events.",
+      "automatable": "no",
+      "inputs_required": [
+        "html",
+        "media"
+      ],
+      "pass_condition": "Live media streams include real-time captions",
+      "fail_condition": "Live media stream has no captioning mechanism",
+      "suggested_fix": "Integrate real-time captioning service for live media",
+      "severity": "major",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "media-motion-and-timing-motion-based-interaction-001",
+      "category": "Media, motion, and timing",
+      "item": "Motion-based interaction can be disabled unless essential",
+      "level": "AA",
+      "wcag_sc": [
+        "2.5.4"
+      ],
+      "sc_name": "Motion Actuation",
+      "applies_to": [
+        "device motion"
+      ],
+      "manual_check": "Test shake/tilt/motion controls and settings.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Motion-based features (shake, tilt) can be disabled and have button/click alternatives",
+      "fail_condition": "Functionality requires device motion with no setting to disable or alternative input",
+      "suggested_fix": "Provide a setting to disable motion-based interaction and offer button/click alternatives",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "consistency-and-compatibility-navigation-patterns-are-001",
+      "category": "Consistency and compatibility",
+      "item": "Navigation patterns are used consistently",
+      "level": "AA",
+      "wcag_sc": [
+        "3.2.3"
+      ],
+      "sc_name": "Consistent Navigation",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Compare common flows across pages.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Navigation components maintain the same order and structure across pages",
+      "fail_condition": "Navigation order or structure varies between pages",
+      "suggested_fix": "Use shared navigation components/templates to ensure consistency across pages",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "consistency-and-compatibility-components-with-the-001",
+      "category": "Consistency and compatibility",
+      "item": "Components with the same function are identified consistently",
+      "level": "AA",
+      "wcag_sc": [
+        "3.2.4"
+      ],
+      "sc_name": "Consistent Identification",
+      "applies_to": [
+        "all"
+      ],
+      "manual_check": "Check repeated actions/components for consistent labeling.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Components serving the same function use the same label, icon, and text across all occurrences",
+      "fail_condition": "Same-function components use different labels or icons on different pages",
+      "suggested_fix": "Standardize labels and icons for recurring components (e.g., search, print, save)",
+      "severity": "minor",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "consistency-and-compatibility-accessibility-apis-are-001",
+      "category": "Consistency and compatibility",
+      "item": "Accessibility APIs are updated correctly when component states change",
+      "level": "A",
+      "wcag_sc": [
+        "4.1.2"
+      ],
+      "sc_name": "Name, Role, Value",
+      "applies_to": [
+        "custom components"
+      ],
+      "manual_check": "Inspect state changes in accessibility tree.",
+      "automatable": "partial",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Custom components update ARIA attributes when state changes (aria-expanded, aria-checked, etc.)",
+      "fail_condition": "Component changes visual state but does not update corresponding ARIA attributes",
+      "suggested_fix": "Update ARIA state attributes programmatically when component state changes",
+      "severity": "critical",
+      "file_patterns": [
+        "*.html",
+        "*.vue",
+        "*.jsx",
+        "*.tsx"
+      ]
+    },
+    {
+      "id": "consistency-and-compatibility-accessibility-is-verified-001",
+      "category": "Consistency and compatibility",
+      "item": "Accessibility is verified in the browsers and assistive technology combinations your product supports",
+      "level": "AA",
+      "wcag_sc": [],
+      "sc_name": "Governance / Test Coverage",
+      "applies_to": [
+        "qa process"
+      ],
+      "manual_check": "Confirm test matrix and execution evidence.",
+      "automatable": "no",
+      "inputs_required": [
+        "html"
+      ],
+      "pass_condition": "Testing matrix includes browser + AT combinations the product supports",
+      "fail_condition": "No documented browser/AT testing matrix or test evidence",
+      "suggested_fix": "Define and document a browser/AT test matrix; include in QA process",
+      "severity": "minor",
+      "file_patterns": []
+    }
+  ]
+}

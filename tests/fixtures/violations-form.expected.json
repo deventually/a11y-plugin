@@ -1,0 +1,27 @@
+{
+  "file": "examples/violations-form.html",
+  "level": "AA",
+  "expected_summary": {
+    "passes_min": 7,
+    "passes_max": 11,
+    "fails": 14,
+    "manual_review_min": 7,
+    "manual_review_max": 11
+  },
+  "expected_findings": [
+    {"check_id": "page-structure-each-page-has-001", "status": "fail", "severity": "critical"},
+    {"check_id": "page-structure-the-page-language-001", "status": "fail", "severity": "critical", "line": 2},
+    {"check_id": "page-structure-headings-reflect-the-001", "status": "fail", "severity": "major", "line": 15},
+    {"check_id": "page-structure-semantic-html-is-001", "status": "fail", "severity": "major", "line": 8},
+    {"check_id": "page-structure-repeated-content-can-001", "status": "fail", "severity": "critical"},
+    {"check_id": "keyboard-and-focus-all-functionality-works-001", "status": "fail", "severity": "critical", "line": 21},
+    {"check_id": "links-buttons-and-controls-icon-only-controls-001", "status": "fail", "severity": "critical", "line": 24},
+    {"check_id": "images-icons-and-tables-informative-images-have-001", "status": "fail", "severity": "critical", "line": 28},
+    {"check_id": "images-icons-and-tables-decorative-images-are-001", "status": "fail", "severity": "minor", "line": 29},
+    {"check_id": "images-icons-and-tables-data-tables-use-001", "status": "fail", "severity": "critical", "line": 31},
+    {"check_id": "forms-and-validation-every-form-control-001", "status": "fail", "severity": "critical", "line": 18},
+    {"check_id": "forms-and-validation-placeholder-text-is-001", "status": "fail", "severity": "critical", "line": 18},
+    {"check_id": "forms-and-validation-errors-are-described-001", "status": "fail", "severity": "critical", "line": 20},
+    {"check_id": "forms-and-validation-input-purpose-is-001", "status": "fail", "severity": "minor", "line": 18}
+  ]
+}

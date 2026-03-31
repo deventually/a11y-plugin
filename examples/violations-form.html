@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+
+    <h1>Login</h1>
+    <h3>Please sign in to continue</h3>
+
+    <form>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <div class="error" style="color: red;"></div>
+        <div onclick="submitForm()" style="cursor: pointer;">Submit</div>
+    </form>
+
+    <div class="icon-btn" onclick="openSettings()">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7z"/></svg>
+    </div>
+
+    <img src="hero.jpg">
+    <img src="decoration.png" alt="A beautiful decorative swirl pattern in blue and gold">
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>alice@example.com</td>
+        </tr>
+    </table>
+</body>
+</html>

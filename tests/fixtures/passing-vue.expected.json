@@ -1,0 +1,12 @@
+{
+  "file": "examples/passing-vue.vue",
+  "level": "AA",
+  "expected_summary": {
+    "passes_min": 10,
+    "passes_max": 20,
+    "fails": 0,
+    "manual_review_min": 3,
+    "manual_review_max": 12
+  },
+  "expected_findings": []
+}

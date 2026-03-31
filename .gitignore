@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Private source-only files
+.claude/
+docs/superpowers/
+ROADMAP.md
+
+# Generated audit reports (user-specific, not part of plugin)
+docs/a11y-reports/
+
+# Git worktrees
+.worktrees/
