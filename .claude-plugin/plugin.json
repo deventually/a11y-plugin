@@ -5,6 +5,6 @@
   "author": {
     "name": "deventually"
 },
-  "skills": "./skills/",
-  "agents": "./agents/"
+  "skills": "./skills",
+  "agents": "./agents"
 }
